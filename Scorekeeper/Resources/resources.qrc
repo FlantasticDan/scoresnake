@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>mask_base.png</file>
     <file>empty_base.png</file>
     <file>highlighted_base.png</file>
     <file>pressed_base.png</file>
