@@ -51,14 +51,20 @@ class BaseballScorekeeper:
 
     def minus_strike(self):
         self.strikes -= 1
+        if self.strikes < 0:
+            self.strikes = 0
         return self.strikes
 
     def minus_ball(self):
         self.balls -= 1
+        if self.balls < 0:
+            self.balls = 0
         return self.balls
 
     def minus_out(self):
         self.outs -= 1
+        if self.outs < 0:
+            self.outs = 0
         return self.outs
 
     def reset_strikes(self):
@@ -113,9 +119,13 @@ class BaseballScorekeeper:
     def minus_score(self):
         if self.top:
             self.visitor -= 1
+            if self.visitor < 0:
+                self.visitor = 0
             return self.visitor
         elif self.bottom:
             self.home -= 1
+            if self.home < 0:
+                self.home = 0
             return self.home
 
     def bottom_inning(self):
