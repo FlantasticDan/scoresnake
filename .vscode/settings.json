@@ -1,6 +1,7 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.pythonPath": "${workspaceFolder}/venv",
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=PySide2"
-    ]
+    ],
+    "python.terminal.executeInFileDir": true
 }
