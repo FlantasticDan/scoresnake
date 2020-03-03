@@ -3,18 +3,22 @@ from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtGui import QFontDatabase
 from PySide2.QtCore import Qt
 from ui_baseball import Ui_Baseball
+from scorekeeper import BaseballScorekeeper
 
 class BaseballGUI(QMainWindow):
     def __init__(self):
         super(BaseballGUI, self).__init__()
 
-        self.UI = Ui_Baseball()
+        # Assign Helper Classes
+        self.ui = Ui_Baseball()
+        self.keeper = BaseballScorekeeper()
 
         self.fonts()
 
-        self.UI.setupUi(self)
-
+        # Draw GUI
+        self.ui.setupUi(self)
         self.prepare_ui()
+
 
     def fonts(self):
         '''Add fonts to the Qt Font Database.'''
@@ -30,9 +34,15 @@ class BaseballGUI(QMainWindow):
         self.clear_count()
         self.clear_outs()
 
-        self.mask_button(self.UI.base1)
-        self.mask_button(self.UI.base2)
-        self.mask_button(self.UI.base3)
+        # Mask Base Toggle Buttons
+        self.mask_button(self.ui.base1)
+        self.mask_button(self.ui.base2)
+        self.mask_button(self.ui.base3)
+
+        # Hide Home Score Buttons
+        self.set_home_inactive()
+        self.set_visitor_active()
+
 
     def mask_button(self, button):
         '''Masks the given button by using the QPixmap in the 'mask' property of the button.'''
@@ -42,14 +52,14 @@ class BaseballGUI(QMainWindow):
 
     def clear_strikes(self):
         '''Clears the strike indicators.'''
-        self.UI.strike1.setVisible(False)
-        self.UI.strike2.setVisible(False)
+        self.ui.strike1.setVisible(False)
+        self.ui.strike2.setVisible(False)
 
     def clear_balls(self):
         '''Clears the ball indicators.'''
-        self.UI.ball1.setVisible(False)
-        self.UI.ball2.setVisible(False)
-        self.UI.ball3.setVisible(False)
+        self.ui.ball1.setVisible(False)
+        self.ui.ball2.setVisible(False)
+        self.ui.ball3.setVisible(False)
 
     def clear_count(self):
         '''Clears the ball and strike count indicators.'''
@@ -58,9 +68,29 @@ class BaseballGUI(QMainWindow):
 
     def clear_outs(self):
         '''Clears the out indicators.'''
-        self.UI.out1.setVisible(False)
-        self.UI.out2.setVisible(False)
-        self.UI.out3.setVisible(False)
+        self.ui.out1.setVisible(False)
+        self.ui.out2.setVisible(False)
+        self.ui.out3.setVisible(False)
+
+    def set_home_inactive(self):
+        self.ui.home_plus.setVisible(False)
+        self.ui.home_minus.setVisible(False)
+        self.ui.home.setEnabled(False)
+
+    def set_home_active(self):
+        self.ui.home_plus.setVisible(True)
+        self.ui.home_minus.setVisible(True)
+        self.ui.home.setEnabled(True)
+
+    def set_visitor_inactive(self):
+        self.ui.visitor_plus.setVisible(False)
+        self.ui.visitor_minus.setVisible(False)
+        self.ui.visitor.setEnabled(False)
+
+    def set_visitor_active(self):
+        self.ui.visitor_plus.setVisible(True)
+        self.ui.visitor_minus.setVisible(True)
+        self.ui.visitor.setEnabled(True)
 
 
 if __name__ == '__main__':
