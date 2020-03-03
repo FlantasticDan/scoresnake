@@ -290,7 +290,13 @@ QPushButton:pressed{
 color: white;
 background-color: #8C2E2E;
 border: 0px;
-}</string>
+}
+
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
+</string>
        </property>
        <property name="text">
         <string/>
@@ -616,7 +622,10 @@ background-color: #8C2E2E;
 border: 0px;
 }
 
-
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
 </string>
        </property>
        <property name="text">
@@ -1116,7 +1125,13 @@ QPushButton:pressed{
 color: white;
 background-color: #8C2E2E;
 border: 0px;
-}</string>
+}
+
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1311,7 +1326,10 @@ background-color: #8C2E2E;
 border: 0px;
 }
 
-
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
 </string>
       </property>
       <property name="text">
@@ -1478,6 +1496,9 @@ border: 0px;
       </property>
      </widget>
      <widget class="QPushButton" name="visitor_minus">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1507,7 +1528,10 @@ background-color: #8C2E2E;
 border: 0px;
 }
 
-
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
 </string>
       </property>
       <property name="text">
@@ -1593,6 +1617,9 @@ border: 0px;
      </widget>
     </widget>
     <widget class="QWidget" name="inning" native="true">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -1787,7 +1814,10 @@ background-color: #8C2E2E;
 border: 0px;
 }
 
-
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
 </string>
       </property>
       <property name="text">

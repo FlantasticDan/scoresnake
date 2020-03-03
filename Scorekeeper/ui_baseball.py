@@ -133,7 +133,13 @@ class Ui_Baseball(object):
 "color: white;\n"
 "background-color: #8C2E2E;\n"
 "border: 0px;\n"
-"}")
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
+"")
         icon = QIcon()
         icon.addFile(u":/icons/minus.png", QSize(), QIcon.Normal, QIcon.On)
         self.strike_minus.setIcon(icon)
@@ -246,7 +252,10 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "\n"
-"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
 "")
         self.balls_minus.setIcon(icon)
         self.balls_minus.setIconSize(QSize(30, 30))
@@ -466,7 +475,13 @@ class Ui_Baseball(object):
 "color: white;\n"
 "background-color: #8C2E2E;\n"
 "border: 0px;\n"
-"}")
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
+"")
         self.out_minus.setIcon(icon)
         self.out_minus.setIconSize(QSize(30, 30))
         self.out_minus.setFlat(False)
@@ -553,7 +568,10 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "\n"
-"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
 "")
         self.home_minus.setIcon(icon)
         self.home_minus.setIconSize(QSize(30, 30))
@@ -612,6 +630,7 @@ class Ui_Baseball(object):
         self.visitor_score.setAlignment(Qt.AlignCenter)
         self.visitor_minus = QPushButton(self.visitor)
         self.visitor_minus.setObjectName(u"visitor_minus")
+        self.visitor_minus.setEnabled(True)
         self.visitor_minus.setGeometry(QRect(10, 150, 40, 40))
         self.visitor_minus.setLayoutDirection(Qt.LeftToRight)
         self.visitor_minus.setStyleSheet(u"QPushButton{\n"
@@ -631,7 +650,10 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "\n"
-"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
 "")
         self.visitor_minus.setIcon(icon)
         self.visitor_minus.setIconSize(QSize(30, 30))
@@ -664,6 +686,7 @@ class Ui_Baseball(object):
         self.visitor_plus.setFlat(False)
         self.inning = QWidget(self.score)
         self.inning.setObjectName(u"inning")
+        self.inning.setEnabled(True)
         self.inning.setGeometry(QRect(220, 10, 170, 180))
         self.inning_bottom = QPushButton(self.inning)
         self.inning_bottom.setObjectName(u"inning_bottom")
@@ -764,7 +787,10 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "\n"
-"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
 "")
         self.inning_minus.setIcon(icon)
         self.inning_minus.setIconSize(QSize(30, 30))

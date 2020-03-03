@@ -100,6 +100,8 @@ class BaseballGUI(QMainWindow):
         # Scores
         self.ui.home_score.setText(str(self.keeper.home))
         self.ui.visitor_score.setText(str(self.keeper.visitor))
+        self.ui.home_minus.setEnabled(bool(self.keeper.home))
+        self.ui.visitor_minus.setEnabled(bool(self.keeper.visitor))
 
         # Inning
         self.ui.inning_number.setText(str(self.keeper.inning))
@@ -111,6 +113,7 @@ class BaseballGUI(QMainWindow):
         elif self.keeper.bottom:
             self.set_home_active()
             self.set_visitor_inactive()
+        self.ui.inning_minus.setEnabled(bool(self.keeper.inning - 1))
 
         # Count
         if self.keeper.strikes > 0:
@@ -136,6 +139,9 @@ class BaseballGUI(QMainWindow):
         else:
             self.clear_balls()
 
+        self.ui.balls_minus.setEnabled(bool(self.keeper.balls))
+        self.ui.strike_minus.setEnabled(bool(self.keeper.strikes))
+
         # Outs
         if self.keeper.outs > 0:
             self.ui.out1.setVisible(True)
@@ -145,12 +151,13 @@ class BaseballGUI(QMainWindow):
                 self.ui.out2.setVisible(False)
         else:
             self.clear_outs()
+        self.ui.out_minus.setEnabled(bool(self.keeper.outs))
 
         # Bases
         self.ui.base1.setChecked(self.keeper.base1)
         self.ui.base2.setChecked(self.keeper.base2)
         self.ui.base3.setChecked(self.keeper.base3)
-    
+
     def connect_buttons(self):
         '''Connect QButtons to their handlers.'''
         # Scoring Buttons
