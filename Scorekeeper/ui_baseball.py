@@ -522,10 +522,10 @@ class Ui_Baseball(object):
         self.out3.raise_()
         self.score = QWidget(self.centralwidget)
         self.score.setObjectName(u"score")
-        self.score.setGeometry(QRect(95, 30, 600, 200))
+        self.score.setGeometry(QRect(90, 30, 610, 200))
         self.home = QWidget(self.score)
         self.home.setObjectName(u"home")
-        self.home.setEnabled(False)
+        self.home.setEnabled(True)
         self.home.setGeometry(QRect(410, 0, 200, 200))
         self.home.setStyleSheet(u"#home:enabled{\n"
 "	border: 5px solid #9D44B5\n"

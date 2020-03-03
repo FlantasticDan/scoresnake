@@ -1260,15 +1260,15 @@ border: 0px;
    <widget class="QWidget" name="score" native="true">
     <property name="geometry">
      <rect>
-      <x>95</x>
+      <x>90</x>
       <y>30</y>
-      <width>600</width>
+      <width>610</width>
       <height>200</height>
      </rect>
     </property>
     <widget class="QWidget" name="home" native="true">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
