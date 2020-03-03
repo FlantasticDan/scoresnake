@@ -146,6 +146,8 @@ class BaseballScorekeeper:
 
     def old_inning(self):
         self.inning -= 1
+        if self.inning < 0:
+            self.inning = 0
         return (self.inning, self.top, self.bottom)
 
     def advance_game(self):
