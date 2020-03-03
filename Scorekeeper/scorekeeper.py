@@ -137,10 +137,12 @@ class BaseballScorekeeper:
     def old_inning(self):
         self.inning -= 1
         return (self.inning, self.top, self.bottom)
-    
+
     def advance_game(self):
         if self.top:
             self.bottom_inning()
         elif self.bottom:
             self.new_inning()
+        self.reset_count()
+        self.reset_bases()
     
