@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtWidgets import QApplication, QMainWindow
-from PySide2.QtGui import QFontDatabase, QColor, QRegion
+from PySide2.QtGui import QFontDatabase
 from PySide2.QtCore import Qt
 from ui_baseball import Ui_Baseball
 
@@ -15,7 +15,7 @@ class BaseballGUI(QMainWindow):
         self.UI.setupUi(self)
 
         self.prepare_ui()
-    
+
     def fonts(self):
         '''Add fonts to the Qt Font Database.'''
         QFontDatabase.addApplicationFont(u':/fonts/OpenSans-Bold.ttf')
@@ -44,18 +44,18 @@ class BaseballGUI(QMainWindow):
         '''Clears the strike indicators.'''
         self.UI.strike1.setVisible(False)
         self.UI.strike2.setVisible(False)
-    
+
     def clear_balls(self):
         '''Clears the ball indicators.'''
         self.UI.ball1.setVisible(False)
         self.UI.ball2.setVisible(False)
         self.UI.ball3.setVisible(False)
-    
+
     def clear_count(self):
         '''Clears the ball and strike count indicators.'''
         self.clear_balls()
         self.clear_strikes()
-    
+
     def clear_outs(self):
         '''Clears the out indicators.'''
         self.UI.out1.setVisible(False)
