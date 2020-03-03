@@ -921,7 +921,7 @@ border: 0px;
      <widget class="QLabel" name="out1_bg">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>17</x>
         <y>30</y>
         <width>50</width>
         <height>50</height>
@@ -949,7 +949,7 @@ border: 0px;
      <widget class="QLabel" name="out2_bg">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>83</x>
         <y>30</y>
         <width>50</width>
         <height>50</height>
@@ -977,7 +977,7 @@ border: 0px;
      <widget class="QLabel" name="out2">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>83</x>
         <y>30</y>
         <width>50</width>
         <height>50</height>
@@ -1008,7 +1008,7 @@ border: 0px;
       </property>
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>17</x>
         <y>30</y>
         <width>50</width>
         <height>50</height>
@@ -1189,72 +1189,6 @@ border: 0px;
        </size>
       </property>
      </widget>
-     <widget class="QLabel" name="out3">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>30</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="Resources/resources.qrc">:/icons/hilighted_circle.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="margin">
-       <number>8</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="out3_bg">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>30</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="Resources/resources.qrc">:/icons/empty_circle.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="margin">
-       <number>8</number>
-      </property>
-     </widget>
-     <zorder>outs_label</zorder>
-     <zorder>out1_bg</zorder>
-     <zorder>out2_bg</zorder>
-     <zorder>out2</zorder>
-     <zorder>out1</zorder>
-     <zorder>out_plus</zorder>
-     <zorder>out_minus</zorder>
-     <zorder>reset_outs</zorder>
-     <zorder>out3_bg</zorder>
-     <zorder>out3</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="score" native="true">

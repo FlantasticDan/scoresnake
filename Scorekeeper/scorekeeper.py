@@ -28,7 +28,7 @@ class BaseballScorekeeper:
 
     def ball(self):
         self.balls += 1
-        if self.outs == 4: # Walk
+        if self.balls == 4: # Walk
             self.reset_count()
             if self.base1:
                 if self.base2:
