@@ -1381,6 +1381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832150337}
   - component: {fileID: 832150336}
+  - component: {fileID: 832150338}
   m_Layer: 0
   m_Name: SCOREKEEPER
   m_TagString: Untagged
@@ -1400,19 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac142cad39f5d8047a68b6c640cd3bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visitorScore: {fileID: 1683699465}
-  homeScore: {fileID: 1613332520}
-  inning: {fileID: 1616185642}
-  inningIndicator: {fileID: 2139426401}
-  balls: {fileID: 1290045686}
-  strikes: {fileID: 577550838}
-  outsLabel: {fileID: 77071654}
-  outs: {fileID: 90359281}
-  firstBaseUI: {fileID: 1027859460}
-  secondBaseUI: {fileID: 1144162722}
-  thirdBaseUI: {fileID: 379109734}
-  emptyBase: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
-  occupiedBase: {r: 0.90588236, g: 0.36862746, b: 0.09019608, a: 1}
+  serverEndpoint: 
 --- !u!4 &832150337
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,6 +1416,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832150338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832150335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d4c3cc0d558004c8c4968ff3fc540d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorekeeper: {fileID: 832150336}
+  visitorScore: {fileID: 1683699465}
+  homeScore: {fileID: 1613332520}
+  inning: {fileID: 1616185642}
+  inningIndicator: {fileID: 2139426401}
+  balls: {fileID: 1290045686}
+  strikes: {fileID: 577550838}
+  outsLabel: {fileID: 77071654}
+  outs: {fileID: 90359281}
+  firstBaseUI: {fileID: 1027859460}
+  secondBaseUI: {fileID: 1144162722}
+  thirdBaseUI: {fileID: 379109734}
+  emptyBase: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
+  occupiedBase: {r: 0.9058824, g: 0.36862746, b: 0.09019608, a: 1}
 --- !u!1 &899346235
 GameObject:
   m_ObjectHideFlags: 0

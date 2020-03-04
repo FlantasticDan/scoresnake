@@ -6,94 +6,35 @@ using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class scorekeeper : MonoBehaviour
 {
     public Dictionary<string, string> score;
     public Thread scoreKeeperServer;
-
-    // UI Elements
-    public TextMeshProUGUI visitorScore;
-    public TextMeshProUGUI homeScore;
-    public TextMeshProUGUI inning;
-    public RectTransform inningIndicator;
-    public TextMeshProUGUI balls;
-    public TextMeshProUGUI strikes;
-    public TextMeshProUGUI outsLabel;
-    public TextMeshProUGUI outs;
-    public RawImage firstBaseUI;
-    public RawImage secondBaseUI;
-    public RawImage thirdBaseUI;
-    public Color emptyBase;
-    public Color occupiedBase;
+    public string serverEndpoint;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreKeeperServer = new Thread(new ThreadStart(ScoreServer));
-        scoreKeeperServer.Start();        
+        scoreKeeperServer.Start();
+        serverEndpoint = GetIP();
     }
 
     // Update is called once per frame
     void Update()
     {
-        try
-        {
-            UpdateTextUI(visitorScore, "visitor");
-            UpdateTextUI(homeScore, "home");
-            UpdateTextUI(inning, "inning");
-            UpdateTextUI(balls, "balls");
-            UpdateTextUI(strikes, "strikes");
-            UpdateTextUI(outs, "outs");
-            
-            UpdateBaseUI(firstBaseUI, "base1");
-            UpdateBaseUI(secondBaseUI, "base2");
-            UpdateBaseUI(thirdBaseUI, "base3");
 
-            UpdateIndicator();
-        }
-        catch (System.Exception)
-        {
-            Debug.Log("Couldn't Update UI");
-        }
     }
 
-
-    void UpdateTextUI(TextMeshProUGUI target, string field)
+    private string GetIP()
     {
-        target.text = score[field];
-    }
+        string hostName = System.Net.Dns.GetHostName();
+        IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(hostName);
+        IPAddress[] addr = ipEntry.AddressList;
 
-    void UpdateBaseUI(RawImage img, string field)
-    {
-        bool state = bool.Parse(score[field]);
-        if (state)
-        {
-            img.color = occupiedBase;
-        }
-        else
-        {
-            img.color = emptyBase;
-        }
-    }
+        return addr[addr.Length - 1].ToString();
 
-    void UpdateIndicator()
-    {
-        bool top = bool.Parse(score["top"]);
-        bool bottom = bool.Parse(score["bottom"]);
-
-        if (top && !bottom)
-        {
-            inningIndicator.eulerAngles = new Vector3(0.0f, 0.0f,00.0f);
-            
-        }
-
-        if (!top && bottom)
-        {
-            inningIndicator.eulerAngles = new Vector3(0.0f, 0.0f,180.0f);
-        }
     }
 
     void ScoreServer()
