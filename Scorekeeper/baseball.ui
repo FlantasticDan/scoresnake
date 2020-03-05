@@ -25,6 +25,11 @@
   <property name="windowTitle">
    <string>Baseball Scorekeeper</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icons/baseball_solid.png</normalon>
+   </iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
 	background-color: #3C4148

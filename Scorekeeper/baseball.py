@@ -1,3 +1,5 @@
+'''GUI for Baseball Scorkeeping'''
+
 import sys
 from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtGui import QFontDatabase
@@ -6,14 +8,15 @@ from ui_baseball import Ui_Baseball
 from scorekeeper import BaseballScorekeeper
 
 class BaseballGUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, home='home', visitor='visitor', serverIP='127.0.0.1', debug=False):
         super(BaseballGUI, self).__init__()
 
         # Assign Helper Classes
         self.ui = Ui_Baseball()
-        self.keeper = BaseballScorekeeper()
+        self.keeper = BaseballScorekeeper(serverIP=serverIP)
 
-        self.fonts()
+        if debug:
+            self.fonts()
 
         # Draw GUI
         self.ui.setupUi(self)
@@ -22,6 +25,11 @@ class BaseballGUI(QMainWindow):
         self.update()
         self.connect_buttons()
 
+        self.ui.home_name.setText(home.upper())
+        self.ui.visitor_name.setText(visitor.upper())
+
+    def closeEvent(self, event):
+        self.keeper.server.stop_heartbeat()
 
     def fonts(self):
         '''Add fonts to the Qt Font Database.'''
@@ -268,7 +276,7 @@ if __name__ == '__main__':
     QApplication.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling, True)
     APP = QApplication(sys.argv)
 
-    WINDOW = BaseballGUI()
+    WINDOW = BaseballGUI(debug=True)
     WINDOW.show()
 
     APP.exec_()

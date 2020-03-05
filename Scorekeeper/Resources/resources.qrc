@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="icons">
+    <file>scoresnake_icon.png</file>
+    <file>scoresnake_icon_light.png</file>
+    <file>baseball_mask.png</file>
+    <file>baseball_outline.png</file>
+    <file>baseball_solid.png</file>
     <file>mask_base.png</file>
     <file>empty_base.png</file>
     <file>highlighted_base.png</file>

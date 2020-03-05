@@ -24,6 +24,9 @@ class Ui_Baseball(object):
         Baseball.resize(790, 460)
         Baseball.setMinimumSize(QSize(790, 460))
         Baseball.setMaximumSize(QSize(790, 460))
+        icon = QIcon()
+        icon.addFile(u":/icons/baseball_solid.png", QSize(), QIcon.Normal, QIcon.On)
+        Baseball.setWindowIcon(icon)
         Baseball.setStyleSheet(u"QMainWindow{\n"
 "	background-color: #3C4148\n"
 "}")
@@ -140,9 +143,9 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        icon = QIcon()
-        icon.addFile(u":/icons/minus.png", QSize(), QIcon.Normal, QIcon.On)
-        self.strike_minus.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/minus.png", QSize(), QIcon.Normal, QIcon.On)
+        self.strike_minus.setIcon(icon1)
         self.strike_minus.setIconSize(QSize(30, 30))
         self.strike_minus.setFlat(False)
         self.balls = QWidget(self.count)
@@ -257,7 +260,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.balls_minus.setIcon(icon)
+        self.balls_minus.setIcon(icon1)
         self.balls_minus.setIconSize(QSize(30, 30))
         self.balls_minus.setFlat(False)
         self.reset_count = QPushButton(self.count)
@@ -285,9 +288,9 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/refresh.png", QSize(), QIcon.Normal, QIcon.On)
-        self.reset_count.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/refresh.png", QSize(), QIcon.Normal, QIcon.On)
+        self.reset_count.setIcon(icon2)
         self.reset_count.setIconSize(QSize(28, 28))
         self.bases = QWidget(self.hud)
         self.bases.setObjectName(u"bases")
@@ -386,7 +389,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.reset_bases.setIcon(icon1)
+        self.reset_bases.setIcon(icon2)
         self.reset_bases.setIconSize(QSize(28, 28))
         self.outs = QWidget(self.hud)
         self.outs.setObjectName(u"outs")
@@ -482,7 +485,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.out_minus.setIcon(icon)
+        self.out_minus.setIcon(icon1)
         self.out_minus.setIconSize(QSize(30, 30))
         self.out_minus.setFlat(False)
         self.reset_outs = QPushButton(self.outs)
@@ -507,7 +510,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.reset_outs.setIcon(icon1)
+        self.reset_outs.setIcon(icon2)
         self.reset_outs.setIconSize(QSize(28, 28))
         self.score = QWidget(self.centralwidget)
         self.score.setObjectName(u"score")
@@ -573,7 +576,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.home_minus.setIcon(icon)
+        self.home_minus.setIcon(icon1)
         self.home_minus.setIconSize(QSize(30, 30))
         self.home_minus.setFlat(False)
         self.home_plus = QPushButton(self.home)
@@ -599,9 +602,9 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/plus.png", QSize(), QIcon.Normal, QIcon.On)
-        self.home_plus.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/plus.png", QSize(), QIcon.Normal, QIcon.On)
+        self.home_plus.setIcon(icon3)
         self.home_plus.setIconSize(QSize(30, 30))
         self.home_plus.setFlat(False)
         self.visitor = QWidget(self.score)
@@ -655,7 +658,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.visitor_minus.setIcon(icon)
+        self.visitor_minus.setIcon(icon1)
         self.visitor_minus.setIconSize(QSize(30, 30))
         self.visitor_minus.setFlat(False)
         self.visitor_plus = QPushButton(self.visitor)
@@ -681,7 +684,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.visitor_plus.setIcon(icon2)
+        self.visitor_plus.setIcon(icon3)
         self.visitor_plus.setIconSize(QSize(30, 30))
         self.visitor_plus.setFlat(False)
         self.inning = QWidget(self.score)
@@ -715,9 +718,9 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/down.png", QSize(), QIcon.Normal, QIcon.On)
-        self.inning_bottom.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/down.png", QSize(), QIcon.Normal, QIcon.On)
+        self.inning_bottom.setIcon(icon4)
         self.inning_bottom.setIconSize(QSize(50, 50))
         self.inning_bottom.setCheckable(False)
         self.inning_bottom.setFlat(False)
@@ -748,9 +751,9 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/up.png", QSize(), QIcon.Normal, QIcon.On)
-        self.inning_top.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/up.png", QSize(), QIcon.Normal, QIcon.On)
+        self.inning_top.setIcon(icon5)
         self.inning_top.setIconSize(QSize(50, 50))
         self.inning_top.setCheckable(False)
         self.inning_top.setFlat(False)
@@ -792,7 +795,7 @@ class Ui_Baseball(object):
 "border: 0px;\n"
 "}\n"
 "")
-        self.inning_minus.setIcon(icon)
+        self.inning_minus.setIcon(icon1)
         self.inning_minus.setIconSize(QSize(30, 30))
         self.inning_minus.setFlat(False)
         self.inning_plus = QPushButton(self.inning)
@@ -818,7 +821,7 @@ class Ui_Baseball(object):
 "\n"
 "\n"
 "")
-        self.inning_plus.setIcon(icon2)
+        self.inning_plus.setIcon(icon3)
         self.inning_plus.setIconSize(QSize(30, 30))
         self.inning_plus.setFlat(False)
         self.inning_label = QLabel(self.inning)
