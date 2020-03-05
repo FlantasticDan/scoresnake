@@ -1,4 +1,5 @@
 '''ScoreSnake Authoritative Scorekeeping Classes and Network Infrastructure'''
+
 import socket
 import json
 import time
@@ -7,7 +8,7 @@ import threading
 class BaseballScorekeeper:
     '''Scorekeeper for Baseball'''
 
-    def __init__(self):
+    def __init__(self, serverIP='127.0.0.1'):
         # Scores
         self.visitor = 0
         self.home = 0
@@ -28,7 +29,7 @@ class BaseballScorekeeper:
         self.base3 = False
 
         # Networking
-        self.server = NetworkHandler('127.0.0.1', 42016)
+        self.server = NetworkHandler(serverIP, 42016)
         self.server.send(self.package())
 
     def package(self):
@@ -241,6 +242,7 @@ class NetworkHandler:
         self.ping = ping
         self.heartbeat = threading.Thread(target=self.keep_alive)
         self.heartbeat.start()
+        self.kill = False
 
     def send(self, package: str):
         '''Send score data over socket.'''
@@ -252,3 +254,8 @@ class NetworkHandler:
         while True:
             time.sleep(self.ping)
             self.socket.sendto(self.last_package, (self.target_ip, self.port))
+            if self.kill:
+                break
+
+    def stop_heartbeat(self):
+        self.kill = True
