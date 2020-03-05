@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 using UnityEngine;
+using TMPro;
 
 public class scorekeeper : MonoBehaviour
 {
     public Dictionary<string, string> score;
     public Thread scoreKeeperServer;
     public string serverEndpoint;
+    public TextMeshProUGUI serverEndpointLabel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class scorekeeper : MonoBehaviour
         scoreKeeperServer = new Thread(new ThreadStart(ScoreServer));
         scoreKeeperServer.Start();
         serverEndpoint = GetIP();
+        serverEndpointLabel.text = serverEndpoint;
     }
 
     // Update is called once per frame
