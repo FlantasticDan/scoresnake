@@ -1,6 +1,7 @@
 '''GUI for Baseball Scorkeeping'''
 
 import sys
+import keyboard
 from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtGui import QFontDatabase
 from PySide2.QtCore import Qt
@@ -24,6 +25,7 @@ class BaseballGUI(QMainWindow):
 
         self.update()
         self.connect_buttons()
+        self.add_keyboard_hooks()
 
         self.ui.home_name.setText(home.upper())
         self.ui.visitor_name.setText(visitor.upper())
@@ -197,6 +199,33 @@ class BaseballGUI(QMainWindow):
         self.ui.base2.clicked.connect(self.base2_handler)
         self.ui.base3.clicked.connect(self.base3_handler)
         self.ui.reset_bases.clicked.connect(self.reset_bases_handler)
+
+    def add_keyboard_hooks(self):
+        '''Add listeners and handlers to keyboard events beyoud application focus.'''
+        keyboard.add_hotkey('q', self.score_handler)
+        keyboard.add_hotkey('shift+q', self.minus_score_handler)
+
+        keyboard.add_hotkey('up', self.base2_handler)
+        keyboard.add_hotkey('down', self.reset_bases_handler)
+        keyboard.add_hotkey('left', self.base3_handler)
+        keyboard.add_hotkey('right', self.base1_handler)
+
+        keyboard.add_hotkey('shift+up', self.top_inning_handler)
+        keyboard.add_hotkey('shift+down', self.bottom_inning_handler)
+        keyboard.add_hotkey('shift+left', self.minus_inning_handler)
+        keyboard.add_hotkey('shift+right', self.add_inning_handler)
+
+        keyboard.add_hotkey('a', self.ball_handler)
+        keyboard.add_hotkey('s', self.strike_handler)
+        keyboard.add_hotkey('d', self.out_handler)
+
+        keyboard.add_hotkey('shift+a', self.minus_ball_handler)
+        keyboard.add_hotkey('shift+s', self.minus_strike_handler)
+        keyboard.add_hotkey('shift+d', self.minus_out_handler)
+
+        keyboard.add_hotkey('w', self.reset_count_handler)
+        keyboard.add_hotkey('e', self.reset_outs_handler)
+
 
     def score_handler(self):
         self.keeper.score()
