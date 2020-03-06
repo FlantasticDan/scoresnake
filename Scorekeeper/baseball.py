@@ -32,6 +32,7 @@ class BaseballGUI(QMainWindow):
 
     def closeEvent(self, event):
         self.keeper.server.stop_heartbeat()
+        keyboard.unhook_all_hotkeys()
 
     def fonts(self):
         '''Add fonts to the Qt Font Database.'''
@@ -205,15 +206,15 @@ class BaseballGUI(QMainWindow):
         keyboard.add_hotkey('q', self.score_handler)
         keyboard.add_hotkey('shift+q', self.minus_score_handler)
 
-        keyboard.add_hotkey('up', self.base2_handler)
-        keyboard.add_hotkey('down', self.reset_bases_handler)
-        keyboard.add_hotkey('left', self.base3_handler)
-        keyboard.add_hotkey('right', self.base1_handler)
+        keyboard.add_hotkey('i', self.base2_handler)
+        keyboard.add_hotkey('k', self.reset_bases_handler)
+        keyboard.add_hotkey('j', self.base3_handler)
+        keyboard.add_hotkey('l', self.base1_handler)
 
-        keyboard.add_hotkey('shift+up', self.top_inning_handler)
-        keyboard.add_hotkey('shift+down', self.bottom_inning_handler)
-        keyboard.add_hotkey('shift+left', self.minus_inning_handler)
-        keyboard.add_hotkey('shift+right', self.add_inning_handler)
+        keyboard.add_hotkey('shift+i', self.top_inning_handler)
+        keyboard.add_hotkey('shift+k', self.bottom_inning_handler)
+        keyboard.add_hotkey('shift+j', self.minus_inning_handler)
+        keyboard.add_hotkey('shift+l', self.add_inning_handler)
 
         keyboard.add_hotkey('a', self.ball_handler)
         keyboard.add_hotkey('s', self.strike_handler)
