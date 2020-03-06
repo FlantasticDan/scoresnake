@@ -14,10 +14,12 @@ public class scorekeeper : MonoBehaviour
     public Thread scoreKeeperServer;
     public string serverEndpoint;
     public TextMeshProUGUI serverEndpointLabel;
+    private bool app_running;
 
     // Start is called before the first frame update
     void Start()
     {
+        app_running = true;
         scoreKeeperServer = new Thread(new ThreadStart(ScoreServer));
         scoreKeeperServer.Start();
         serverEndpoint = GetIP();
@@ -40,6 +42,10 @@ public class scorekeeper : MonoBehaviour
 
     }
 
+    void OnApplicationQuit()
+    {
+        app_running = false;
+    }
     void ScoreServer()
     {
         UdpClient server = new UdpClient(42016);
@@ -49,7 +55,7 @@ public class scorekeeper : MonoBehaviour
         string previous_payload = "";
         string payload_string = "NONE";
 
-        while (true)
+        while (app_running)
         {
             var payload = server.Receive(ref remoteEP);
             payload_string = Encoding.UTF8.GetString(payload);
