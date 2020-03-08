@@ -5,6 +5,127 @@ import json
 import time
 import threading
 
+class VolleyballScorekeeper:
+    '''Scorekeeper for Volleyball'''
+
+    def __init__(self, serverIP='127.0.0.1'):
+        # Scores
+        self.visitor = 0
+        self.home = 0
+
+        # Sets
+        self.set = 1
+        self.visitor_sets = 0
+        self.home_sets = 0
+
+        # Gameplay Rules
+        self.bestof = 5
+        self.points = 25
+
+        # Networking
+        self.server = NetworkHandler(serverIP, 42016)
+        self.update()
+
+    def package(self):
+        '''Package scorekeeper variables into a JSON string.'''
+        package = {
+            'visitor': self.visitor,
+            'home': self.home,
+            'set': self.set,
+            'visitor_sets': self.visitor_sets,
+            'home_sets': self.home_sets,
+            'bestof': self.bestof,
+            'points': self.points
+        }
+        return json.dumps(package)
+
+    def update(self):
+        '''Update connected server with new score data.'''
+        self.server.send(self.package())
+
+    def clear_scores(self):
+        self.home = 0
+        self.visitor = 0
+        self.update()
+
+    def new_set(self):
+        self.clear_scores()
+        self.set += 1
+        if self.set == self.bestof: # Deciding Set
+            self.points = 15
+        if self.set > self.bestof:
+            self.set = self.bestof
+        self.update()
+
+    def last_set(self):
+        self.set -= 1
+        if self.set < 0:
+            self.set = 0
+        if self.set != self.bestof:
+            self.points = 25
+
+    def change_bestof_3(self):
+        self.bestof = 3
+        self.update()
+
+    def change_bestof_5(self):
+        self.bestof = 5
+        self.update()
+
+    def change_points_15(self):
+        self.points = 15
+        self.update()
+
+    def change_points_25(self):
+        self.points = 25
+        self.update()
+
+    def home_set(self):
+        self.home_sets += 1
+        self.update()
+
+    def vistor_set(self):
+        self.visitor_sets += 1
+        self.update()
+
+    def minus_home_set(self):
+        self.home_sets -= 1
+        if self.home_sets < 0:
+            self.home_sets = 0
+        self.update()
+
+    def minus_vistor_set(self):
+        self.visitor_sets -= 1
+        if self.visitor_sets < 0:
+            self.visitor_sets = 0
+        self.update()
+
+    def home_score(self):
+        self.home += 1
+        if self.home >= self.points and self.home - self.visitor >= 2: # Set Won by 2
+            self.home_sets += 1
+            self.new_set()
+        self.update()
+
+    def visitor_score(self):
+        self.visitor += 1
+        if self.visitor >= self.points and self.visitor - self.home >= 2: # Set Won by 2
+            self.visitor_sets += 1
+            self.new_set()
+        self.update()
+
+    def minus_home_score(self):
+        self.home -= 1
+        if self.home < 0:
+            self.home = 0
+        self.update()
+
+    def minus_visitor_score(self):
+        self.visitor -= 1
+        if self.visitor < 0:
+            self.visitor = 0
+        self.update()
+
 class BaseballScorekeeper:
     '''Scorekeeper for Baseball'''
 
@@ -30,7 +151,7 @@ class BaseballScorekeeper:
 
         # Networking
         self.server = NetworkHandler(serverIP, 42016)
-        self.server.send(self.package())
+        self.update()
 
     def package(self):
         '''Package scorekeeper variables into a JSON string.'''
