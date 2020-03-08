@@ -4,6 +4,7 @@ from PySide2.QtGui import QFontDatabase
 from PySide2.QtCore import Qt
 from ui_launcher import Ui_launcher
 from baseball import BaseballGUI
+from volleyball import VolleyballGUI
 
 class ScoresnakeGUI(QMainWindow):
     def __init__(self):
@@ -19,6 +20,9 @@ class ScoresnakeGUI(QMainWindow):
         # Buttons
         self.mask_button(self.ui.baseball_button)
         self.ui.baseball_button.clicked.connect(self.baseball_button_handler)
+
+        self.mask_button(self.ui.volleyball_button)
+        self.ui.volleyball_button.clicked.connect(self.volleyball_button_handler)
 
 
     def fonts(self):
@@ -53,6 +57,25 @@ class ScoresnakeGUI(QMainWindow):
 
         baseball.show()
         baseball.exec()
+    
+    def volleyball_button_handler(self):
+        kwargs = dict()
+
+        if self.ui.home_text.text() != '':
+            kwargs['home'] = self.ui.home_text.text()
+
+        if self.ui.visitor_text.text() != '':
+            kwargs['visitor'] = self.ui.visitor_text.text()
+
+        if self.ui.server_ip.text() != '':
+            kwargs['serverIP'] = self.ui.server_ip.text()
+
+        volleyball = VolleyballGUI(**kwargs)
+
+        self.close()
+
+        volleyball.show()
+        volleyball.exec()
 
 
 if __name__ == '__main__':
