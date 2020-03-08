@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Daniel Flanagan
-  productName: Baseball Scorebug
+  productName: Volleyball Scorebug
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: 0.1.2
+  bundleVersion: 0.2.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -278,7 +278,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 3957914a807e92045a7531e1bacc2c48, type: 3}
+      m_Icon: {fileID: 2800000, guid: 469c1fd56bdf9ca4a8bf3e28ae9071c5, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
