@@ -111,7 +111,7 @@ class Ui_launcher(object):
         self.server_ip.setAlignment(Qt.AlignCenter)
         self.baseball_button = QPushButton(launcher)
         self.baseball_button.setObjectName(u"baseball_button")
-        self.baseball_button.setGeometry(QRect(260, 290, 80, 80))
+        self.baseball_button.setGeometry(QRect(220, 290, 80, 80))
         self.baseball_button.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgba(0,0,0,0%);\n"
 "	border-image: url(:/icons/baseball_outline.png);\n"
@@ -124,6 +124,21 @@ class Ui_launcher(object):
 "	border: 0px;\n"
 "}")
         self.baseball_button.setProperty("mask", QPixmap(u":/icons/baseball_mask.png"))
+        self.volleyball_button = QPushButton(launcher)
+        self.volleyball_button.setObjectName(u"volleyball_button")
+        self.volleyball_button.setGeometry(QRect(310, 290, 80, 80))
+        self.volleyball_button.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgba(0,0,0,0%);\n"
+"	border-image: url(:/icons/volleyball_outline.png);\n"
+"	border: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(0,0,0,0%);\n"
+"	border-image: url(:/icons/volleyball_solid.png);\n"
+"	border: 0px;\n"
+"}")
+        self.volleyball_button.setProperty("mask", QPixmap(u":/icons/baseball_mask.png"))
 
         self.retranslateUi(launcher)
 
@@ -143,5 +158,9 @@ class Ui_launcher(object):
         self.baseball_button.setToolTip(QCoreApplication.translate("launcher", u"Launch Baseball Scorekeeper", None))
 #endif // QT_CONFIG(tooltip)
         self.baseball_button.setText("")
+#if QT_CONFIG(tooltip)
+        self.volleyball_button.setToolTip(QCoreApplication.translate("launcher", u"Launch Volleyball Scorekeeper", None))
+#endif // QT_CONFIG(tooltip)
+        self.volleyball_button.setText("")
     # retranslateUi
 

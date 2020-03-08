@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>volleyball_outline.png</file>
+    <file>volleyball_solid.png</file>
     <file>scoresnake_icon.png</file>
     <file>scoresnake_icon_light.png</file>
     <file>baseball_mask.png</file>

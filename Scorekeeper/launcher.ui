@@ -253,7 +253,7 @@ QLineEdit:focus{
   <widget class="QPushButton" name="baseball_button">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>220</x>
      <y>290</y>
      <width>80</width>
      <height>80</height>
@@ -272,6 +272,38 @@ QLineEdit:focus{
 QPushButton:hover{
 	background-color: rgba(0,0,0,0%);
 	border-image: url(:/icons/baseball_solid.png);
+	border: 0px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="mask" stdset="0">
+    <pixmap resource="Resources/resources.qrc">:/icons/baseball_mask.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volleyball_button">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>290</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Launch Volleyball Scorekeeper</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgba(0,0,0,0%);
+	border-image: url(:/icons/volleyball_outline.png);
+	border: 0px;
+}
+
+QPushButton:hover{
+	background-color: rgba(0,0,0,0%);
+	border-image: url(:/icons/volleyball_solid.png);
 	border: 0px;
 }</string>
    </property>
