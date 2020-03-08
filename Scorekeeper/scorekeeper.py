@@ -63,6 +63,7 @@ class VolleyballScorekeeper:
             self.set = 0
         if self.set != self.bestof:
             self.points = 25
+        self.update()
 
     def change_bestof_3(self):
         self.bestof = 3
