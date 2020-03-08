@@ -168,11 +168,11 @@ class Ui_Volleyball(object):
         self.visitor_sets_minus.setIcon(icon2)
         self.visitor_sets_minus.setIconSize(QSize(30, 30))
         self.visitor_sets_minus.setFlat(False)
-        self.vistor_sets_plus = QPushButton(self.vistor)
-        self.vistor_sets_plus.setObjectName(u"vistor_sets_plus")
-        self.vistor_sets_plus.setGeometry(QRect(140, 220, 40, 40))
-        self.vistor_sets_plus.setLayoutDirection(Qt.LeftToRight)
-        self.vistor_sets_plus.setStyleSheet(u"QPushButton{\n"
+        self.visitor_sets_plus = QPushButton(self.vistor)
+        self.visitor_sets_plus.setObjectName(u"visitor_sets_plus")
+        self.visitor_sets_plus.setGeometry(QRect(140, 220, 40, 40))
+        self.visitor_sets_plus.setLayoutDirection(Qt.LeftToRight)
+        self.visitor_sets_plus.setStyleSheet(u"QPushButton{\n"
 "color: white;\n"
 "border: 5px solid #4DA167;\n"
 "}\n"
@@ -191,9 +191,9 @@ class Ui_Volleyball(object):
 "\n"
 "\n"
 "")
-        self.vistor_sets_plus.setIcon(icon1)
-        self.vistor_sets_plus.setIconSize(QSize(30, 30))
-        self.vistor_sets_plus.setFlat(False)
+        self.visitor_sets_plus.setIcon(icon1)
+        self.visitor_sets_plus.setIconSize(QSize(30, 30))
+        self.visitor_sets_plus.setFlat(False)
         self.visitor_sets_label = QLabel(self.vistor)
         self.visitor_sets_label.setObjectName(u"visitor_sets_label")
         self.visitor_sets_label.setGeometry(QRect(0, 185, 190, 20))
@@ -383,7 +383,10 @@ class Ui_Volleyball(object):
 "border: 0px;\n"
 "}\n"
 "\n"
-"\n"
+"QPushButton:disabled{\n"
+"background-color: #81858A;\n"
+"border: 0px;\n"
+"}\n"
 "")
         self.set_plus.setIcon(icon1)
         self.set_plus.setIconSize(QSize(30, 30))
@@ -457,7 +460,8 @@ class Ui_Volleyball(object):
 "\n"
 "QPushButton:disabled{\n"
 "color: white;\n"
-"border: 5px solid #9d44b5;\n"
+"background-color: #9d44b5;\n"
+"border: 0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -481,8 +485,8 @@ class Ui_Volleyball(object):
 "\n"
 "")
         self.bestof_5.setIconSize(QSize(30, 30))
-        self.bestof_5.setCheckable(True)
-        self.bestof_5.setChecked(True)
+        self.bestof_5.setCheckable(False)
+        self.bestof_5.setChecked(False)
         self.bestof_5.setFlat(False)
         self.bestof_label = QLabel(self.bestof)
         self.bestof_label.setObjectName(u"bestof_label")
@@ -493,6 +497,7 @@ class Ui_Volleyball(object):
         self.bestof_label.setAlignment(Qt.AlignCenter)
         self.bestof_3 = QPushButton(self.bestof)
         self.bestof_3.setObjectName(u"bestof_3")
+        self.bestof_3.setEnabled(True)
         self.bestof_3.setGeometry(QRect(0, 30, 40, 40))
         self.bestof_3.setFont(font5)
         self.bestof_3.setLayoutDirection(Qt.LeftToRight)
@@ -503,7 +508,8 @@ class Ui_Volleyball(object):
 "\n"
 "QPushButton:disabled{\n"
 "color: white;\n"
-"border: 5px solid #9d44b5;\n"
+"background-color: #9d44b5;\n"
+"border: 0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -527,13 +533,14 @@ class Ui_Volleyball(object):
 "\n"
 "")
         self.bestof_3.setIconSize(QSize(30, 30))
-        self.bestof_3.setCheckable(True)
+        self.bestof_3.setCheckable(False)
         self.bestof_3.setFlat(False)
         self.points = QWidget(self.centralwidget)
         self.points.setObjectName(u"points")
         self.points.setGeometry(QRect(420, 350, 90, 70))
         self.pts_25 = QPushButton(self.points)
         self.pts_25.setObjectName(u"pts_25")
+        self.pts_25.setEnabled(True)
         self.pts_25.setGeometry(QRect(50, 30, 40, 40))
         self.pts_25.setFont(font5)
         self.pts_25.setLayoutDirection(Qt.LeftToRight)
@@ -544,7 +551,8 @@ class Ui_Volleyball(object):
 "\n"
 "QPushButton:disabled{\n"
 "color: white;\n"
-"border: 5px solid #9d44b5;\n"
+"background-color: #9d44b5;\n"
+"border: 0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -568,8 +576,8 @@ class Ui_Volleyball(object):
 "\n"
 "")
         self.pts_25.setIconSize(QSize(30, 30))
-        self.pts_25.setCheckable(True)
-        self.pts_25.setChecked(True)
+        self.pts_25.setCheckable(False)
+        self.pts_25.setChecked(False)
         self.pts_25.setFlat(False)
         self.pts_label = QLabel(self.points)
         self.pts_label.setObjectName(u"pts_label")
@@ -590,7 +598,8 @@ class Ui_Volleyball(object):
 "\n"
 "QPushButton:disabled{\n"
 "color: white;\n"
-"border: 5px solid #9d44b5;\n"
+"background-color: #9d44b5;\n"
+"border: 0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -614,7 +623,7 @@ class Ui_Volleyball(object):
 "\n"
 "")
         self.pts_15.setIconSize(QSize(30, 30))
-        self.pts_15.setCheckable(True)
+        self.pts_15.setCheckable(False)
         self.pts_15.setFlat(False)
         Volleyball.setCentralWidget(self.centralwidget)
 
@@ -623,7 +632,7 @@ class Ui_Volleyball(object):
         self.visitor_plus.setDefault(False)
         self.visitor_minus.setDefault(False)
         self.visitor_sets_minus.setDefault(False)
-        self.vistor_sets_plus.setDefault(False)
+        self.visitor_sets_plus.setDefault(False)
         self.home_plus.setDefault(False)
         self.home_minus.setDefault(False)
         self.home_sets_minus.setDefault(False)
@@ -647,7 +656,7 @@ class Ui_Volleyball(object):
         self.visitor_minus.setText("")
         self.visitor_sets.setText(QCoreApplication.translate("Volleyball", u"0", None))
         self.visitor_sets_minus.setText("")
-        self.vistor_sets_plus.setText("")
+        self.visitor_sets_plus.setText("")
         self.visitor_sets_label.setText(QCoreApplication.translate("Volleyball", u"SETS WON", None))
         self.home_score.setText(QCoreApplication.translate("Volleyball", u"0", None))
         self.home_plus.setText(QCoreApplication.translate("Volleyball", u"Add Point", None))

@@ -322,7 +322,7 @@ border: 0px;
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="vistor_sets_plus">
+    <widget class="QPushButton" name="visitor_sets_plus">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -824,7 +824,10 @@ background-color: #326742;
 border: 0px;
 }
 
-
+QPushButton:disabled{
+background-color: #81858A;
+border: 0px;
+}
 </string>
      </property>
      <property name="text">
@@ -1014,7 +1017,8 @@ border: 5px solid #9d44b5;
 
 QPushButton:disabled{
 color: white;
-border: 5px solid #9d44b5;
+background-color: #9d44b5;
+border: 0px;
 }
 
 QPushButton:hover{
@@ -1048,10 +1052,10 @@ border: 0px;
       </size>
      </property>
      <property name="checkable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="default">
       <bool>false</bool>
@@ -1092,6 +1096,9 @@ border: 0px;
      </property>
     </widget>
     <widget class="QPushButton" name="bestof_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -1119,7 +1126,8 @@ border: 5px solid #9d44b5;
 
 QPushButton:disabled{
 color: white;
-border: 5px solid #9d44b5;
+background-color: #9d44b5;
+border: 0px;
 }
 
 QPushButton:hover{
@@ -1153,7 +1161,7 @@ border: 0px;
       </size>
      </property>
      <property name="checkable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="default">
       <bool>false</bool>
@@ -1173,6 +1181,9 @@ border: 0px;
      </rect>
     </property>
     <widget class="QPushButton" name="pts_25">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -1200,7 +1211,8 @@ border: 5px solid #9d44b5;
 
 QPushButton:disabled{
 color: white;
-border: 5px solid #9d44b5;
+background-color: #9d44b5;
+border: 0px;
 }
 
 QPushButton:hover{
@@ -1234,10 +1246,10 @@ border: 0px;
       </size>
      </property>
      <property name="checkable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="default">
       <bool>false</bool>
@@ -1305,7 +1317,8 @@ border: 5px solid #9d44b5;
 
 QPushButton:disabled{
 color: white;
-border: 5px solid #9d44b5;
+background-color: #9d44b5;
+border: 0px;
 }
 
 QPushButton:hover{
@@ -1339,7 +1352,7 @@ border: 0px;
       </size>
      </property>
      <property name="checkable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="default">
       <bool>false</bool>
