@@ -4,7 +4,7 @@ isort==4.3.21
 keyboard==0.13.4
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
-pylint==2.4.4
+pylint==4.0.9
 PySide2==5.14.1
 shiboken2==5.14.1
 six==1.14.0
